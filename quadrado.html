@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title> Quadrado </title>
+
+		<style>
+			.quadrado {
+				width: 250px;
+				height: 250px;
+				background-color: red; 
+				transition: 1s;
+			}
+			.numero {
+				font-size: 24px;
+				color: red;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="quadrado" id="ladosiguais" onmouseover="hello()" onmouseout="hello()">
+		</div>
+		<button onclick="contador()" >
+			Clique aqui
+		</button>
+		<button onclick="hello()">
+			zoom
+		</button>
+		<p class="numero" id="contador">
+			
+		</p>
+		<input type="number" id="num1">
+		<input type="number" id="num2">
+		<button onclick="soma()"> Resultado </button>
+		<span class="numero" id="resultado"></span>
+		<div>
+			<input type="text" oninput="texto()" id="caixa-texto">
+			<p id="texto"> alguma coisa</p>
+		</div>
+
+
+		<script type="text/javascript">
+			var trocou = false;
+			function hello() {
+				var quadrado = null;
+				quadrado = document.getElementById("ladosiguais");
+				
+				if(trocou === false) {
+					//console.log(quadrado);
+					quadrado.style.backgroundColor = "green";
+					quadrado.style.width = "500px"
+					trocou = true;
+				} else {
+
+					//alert("ver o quadrado");	
+					quadrado.style.backgroundColor = "red";
+					quadrado.style.width = "250px";
+					trocou = false;			
+				} 
+			}
+			var cont = 0;
+			function contador() {
+				var p = null;
+				p = document.getElementById("contador");
+				//console.log(p);				
+				cont= cont + 1;
+				//console.log(cont);
+
+				p.innerHTML = cont;
+			}
+
+			function soma() {
+				var num1 = 0, num1 = 0, somador, span;
+				num1 = document.getElementById("num1");
+				num2 = document.getElementById("num2");
+				somador = parseInt(num1.value) + parseInt(num2.value);
+				console.log(somador);
+				span = document.getElementById("resultado");
+				span.innerHTML = somador;
+			}
+
+			function texto(){
+				var input,p;
+				p = document.getElementById("texto")
+				input = document.getElementById("caixa-texto");
+				console.log(input.value);
+				p.innerHTML = input.value;
+			}
+
+		</script>
+	</body>
+</html>
