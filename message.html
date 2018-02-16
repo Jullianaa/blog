@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>Messages</title>
+		<style>
+			.container{
+				height: 50%;
+				width: 30%;
+				position: relative;
+			}
+			#form{
+				position:absolute;
+				bottom: 0;
+				padding: 10px;
+				width: 100%;
+				box-sizing: border-box;
+			}
+			#message{
+				width: 80%;
+			}
+			#list{
+				overflow-y: scroll;
+				height: 67%;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<ul id="list"> </ul>
+
+			<form id="form" >
+				<input type="text" name="message" id="message" required>
+				<button type="submit" id="send">Send</button>
+			</form>
+		</div>
+				
+		<script src="src/lib/jquery-3.2.1.min.js"> </script>
+		<script src="src/js/messages.js"> </script>
+	</body>
+
+</html>
